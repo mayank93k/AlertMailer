@@ -26,6 +26,7 @@ object EmailAlertParser extends Logging {
      */
     val config = ConfigFactory.load("jobConfig.conf")
     val targetMail = config.getString("targetMail")
+    val senderMail = config.getString("senderMail")
     val hostAddress = config.getString("hostAddress")
     val port = config.getString("port")
 
@@ -43,15 +44,18 @@ object EmailAlertParser extends Logging {
      */
     val session = Session.getInstance(properties, new Authenticator() {
       override protected def getPasswordAuthentication =
-        new PasswordAuthentication(targetMail, "")
+        new PasswordAuthentication(senderMail, "uzqt rwjv thnf uenl")
     })
     try {
       // Construct the email message
       val mimeMessage = new MimeMessage(session)
       mimeMessage.setFrom(new InternetAddress("noreply@gmail.com", "Email Alert"))
       mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(targetMail))
-      mimeMessage.setSubject("Test Alert In Scala")
+      mimeMessage.setSubject(s"$sourceName: Alert Generated")
       mimeMessage.setText(message)
+
+      val htmlEmailContent = message.replace("\n", "<br>")
+      mimeMessage.setContent(htmlEmailContent, "text/html; charset=utf-8")
 
       // Send the email
       Transport.send(mimeMessage)
