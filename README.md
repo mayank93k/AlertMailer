@@ -51,11 +51,12 @@
 ## Usage
 1. Add an Alert Message
 
-AlertMessage.addMessage("System is down!")
+    AlertMessage.addMessage("System is down!")
 
 2. Process Alerts and Send Email
 
-AlertProcessor("System Monitor")
+    AlertProcessor("System Monitor")
+   
 ### Logging
 This project uses logger for logging important events. Errors are logged if an email fails to send.
 
