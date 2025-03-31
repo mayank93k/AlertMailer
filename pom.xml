@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.scala.project</groupId>
-    <artifactId>ScalaML-Lab</artifactId>
-    <version>0.1</version>
+    <artifactId>Scala-Alert</artifactId>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <properties>
