@@ -14,5 +14,4 @@ object AlertSender {
     AlertMessage.addMessage("Hello! this is the test mail")
     UtilityFunction.AlertProcessor("TEST")
   }
-
 }
