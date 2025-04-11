@@ -44,7 +44,7 @@ object EmailAlertParser extends Logging {
      */
     val session = Session.getInstance(properties, new Authenticator() {
       override protected def getPasswordAuthentication =
-        new PasswordAuthentication(senderMail, "uzqt rwjv thnf uenl")
+        new PasswordAuthentication(senderMail, "")
     })
     try {
       // Construct the email message
